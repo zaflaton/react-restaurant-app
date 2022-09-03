@@ -47,20 +47,23 @@ const Footer = () => {
         <p className="text-textColor">Contact Us</p>
         <p className="text-textColor">contact@citymarket.com</p>
         <div className="flex gap-9 mt-3 lg:justify-start justify-center">
-          <img
+          <motion.img
+            whileTap={{ scale: 0.75 }}
             src={twitter}
-            alt="logo"
-            className="w-10 h-10 p-[5px] bg-blue-300 rounded-xl"
+            alt="twitter"
+            className="w-10 h-10 p-[5px] bg-blue-300 rounded-xl hover:shadow-lg transition-all duration-100 ease-in-out"
           />
-          <img
+          <motion.img
+            whileTap={{ scale: 0.75 }}
             src={instagram}
-            alt="logo"
-            className="w-10 h-10 p-1 bg-gradient-to-tr from-orange-400 to-red-500 rounded-xl"
+            alt="instagram"
+            className="w-10 h-10 p-1 bg-gradient-to-tr from-orange-400 to-red-500 rounded-xl hover:shadow-lg transition-all duration-100 ease-in-out"
           />
-          <img
+          <motion.img
+            whileTap={{ scale: 0.75 }}
             src={facebook}
-            alt="logo"
-            className="w-10 h-10 p-1 bg-blue-400 rounded-xl"
+            alt="facebook"
+            className="w-10 h-10 p-1 bg-blue-400 rounded-xl hover:shadow-lg transition-all duration-100 ease-in-out"
           />
         </div>
       </div>
