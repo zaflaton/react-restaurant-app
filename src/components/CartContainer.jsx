@@ -5,7 +5,7 @@ import { RiRefreshFill } from 'react-icons/ri'
 import { motion } from 'framer-motion'
 import { useStateValue } from '../context/StateProvider'
 import { actionType } from '../context/reducer'
-import EmptyCart from '../images/emptyCart.svg'
+import EmptyCart from '../assets/images/emptyCart.svg'
 import CartItem from './CartItem'
 
 const CartContainer = () => {

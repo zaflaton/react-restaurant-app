@@ -1,7 +1,7 @@
-import I1 from '../images/i1.png'
-import F1 from '../images/f1.png'
-import C3 from '../images/c3.png'
-import Fi1 from '../images/fi1.png'
+import I1 from '../assets/images/i1.png'
+import F1 from '../assets/images/f1.png'
+import C3 from '../assets/images/c3.png'
+import Fi1 from '../assets/images/fi1.png'
 
 export const heroData = [
   {

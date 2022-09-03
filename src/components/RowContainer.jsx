@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react'
 import { MdShoppingBasket } from 'react-icons/md'
 import { motion } from 'framer-motion'
-import NotFound from '../images/NotFound.svg'
+import NotFound from '../assets/images/NotFound.svg'
 import { useStateValue } from '../context/StateProvider'
 import { actionType } from '../context/reducer'
 

@@ -1,6 +1,6 @@
 import React from 'react'
-import Delivery from '../images/delivery.png'
-import HeroBg from '../images/heroBg.png'
+import Delivery from '../assets/images/delivery.png'
+import HeroBg from '../assets/images/heroBg.png'
 import { heroData } from '../utils/data'
 
 const HomeContainer = () => {
@@ -42,20 +42,20 @@ const HomeContainer = () => {
         <img
           src={HeroBg}
           alt="hero"
-          className="ml-auto w-full h-[490px] lg:w-auto lg:h-[610px]"
+          className="ml-auto w-full md:h-[490px] lg:w-auto lg:h-[610px]"
         />
-        <div className="absolute w-full h-full top-0 left-0 lg:-left-16 flex flex-wrap gap-4 items-center justify-center px-2 lg:px-0 py-[50px] lg:py-6">
+        <div className="absolute w-full md:w-[350px] lg:w-full h-full top-0 md:-left-5 flex flex-wrap gap-4 md:gap-6 items-center justify-center py-[50px] lg:py-6">
           {heroData &&
             heroData.map((n) => (
               <div
                 key={n.id}
-                className="lg:w-[195px] p-4 bg-cardOverlay backdrop-blur-md rounded-3xl flex flex-col items-center justify-center drop-shadow-lg">
+                className="w-[156px] h-[155px] lg:w-[195px] lg:h-[195px] p-4 bg-cardOverlay backdrop-blur-md rounded-3xl flex flex-col items-center justify-center drop-shadow-lg">
                 <img
                   src={n.imageSrc}
                   alt={n.name}
-                  className="w-20 lg:w-36 -mt-10 lg:-mt-20"
+                  className="w-24 lg:w-36 -mt-12 lg:-mt-20"
                 />
-                <p className="text-base lg:text-lg font-semibold text-textColor mt-2">
+                <p className=" text-sm md:text-base lg:text-lg font-bold md:font-semibold text-textColor mt-2">
                   {n.name}
                 </p>
                 <p className="text-xs lg:text-sm font-semibold text-lightTextGray my-1 lg:my-2">
