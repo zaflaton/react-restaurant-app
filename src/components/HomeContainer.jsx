@@ -5,27 +5,27 @@ import { heroData } from '../utils/data'
 
 const HomeContainer = () => {
   return (
-    <section id="home" className="grid grid-cols-1 md:grid-cols-2 w-full">
-      <div className="py-4 md:py-2 flex-1 flex flex-col items-start justify-center gap-6">
-        <div className="flex items-center justify-center gap-2 bg-orange-100 px-3 py-2 rounded-full">
-          <p className="text-base text-orange-500 font-semibold">
+    <section id="home" className="grid w-full grid-cols-1 md:grid-cols-2">
+      <div className="flex flex-1 flex-col items-start justify-center gap-6 py-4 md:py-2">
+        <div className="flex items-center justify-center gap-2 rounded-full bg-orange-100 px-3 py-2">
+          <p className="text-base font-semibold text-orange-500">
             Bike Delivery
           </p>
-          <div className="w-8 h-8 bg-white rounded-full overflow-hidden drop-shadow-xl">
+          <div className="h-8 w-8 overflow-hidden rounded-full bg-white drop-shadow-xl">
             <img
               src={Delivery}
               alt="bike"
-              className="w-full h-full object-contain "
+              className="h-full w-full object-contain "
             />
           </div>
         </div>
-        <p className="text-[2.5rem] lg:text-[3.75rem] font-bold tracking-wide text-headingColor">
+        <p className="text-[2.5rem] font-bold tracking-wide text-headingColor lg:text-[3.75rem]">
           The Fastest Delivery in{' '}
-          <span className="text-orange-600 text-[3rem] lg:text-[4.25rem] ">
+          <span className="text-[3rem] text-orange-600 lg:text-[4.25rem] ">
             Your City
           </span>
         </p>
-        <p className="md:w-10/12 text-base text-textColor text-center md:text-left">
+        <p className="text-center text-base text-textColor md:w-10/12 md:text-left">
           Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci
           alias in a nihil eaque beatae sapiente vitae, expedita vero aspernatur
           delectus ullam maiores reprehenderit sit pariatur sint ratione. Hic,
@@ -34,31 +34,31 @@ const HomeContainer = () => {
 
         <button
           type="button"
-          className="bg-gradient-to-br from-orange-400 to-orange-500 w-full md:w-auto px-4 py-2 rounded-lg hover:shadow-lg transition-all ease-in-out duration-100">
+          className="w-full rounded-lg bg-gradient-to-br from-orange-400 to-orange-500 px-4 py-2 transition-all duration-100 ease-in-out hover:shadow-lg md:w-auto">
           Order Now
         </button>
       </div>
-      <div className="relative py-2 flex-1 flex items-center">
+      <div className="relative flex flex-1 items-center py-2">
         <img
           src={HeroBg}
           alt="hero"
-          className="ml-auto w-full md:h-[490px] lg:w-auto lg:h-[610px]"
+          className="ml-auto w-full md:h-[490px] lg:h-[610px] lg:w-auto"
         />
-        <div className="absolute w-full md:w-[350px] lg:w-full h-full top-0 md:-left-5 flex flex-wrap gap-4 md:gap-6 items-center justify-center py-[50px] lg:py-6">
+        <div className="absolute top-0 flex h-full w-full flex-wrap items-center justify-center gap-4 py-[50px] md:-left-5 md:w-[350px] md:gap-6 lg:w-full lg:py-6">
           {heroData &&
             heroData.map((n) => (
               <div
                 key={n.id}
-                className="w-[156px] h-[155px] lg:w-[195px] lg:h-[195px] p-4 bg-cardOverlay backdrop-blur-md rounded-3xl flex flex-col items-center justify-center drop-shadow-lg">
+                className="flex h-[155px] w-[156px] flex-col items-center justify-center rounded-3xl bg-cardOverlay p-4 drop-shadow-lg backdrop-blur-md lg:h-[195px] lg:w-[195px]">
                 <img
                   src={n.imageSrc}
                   alt={n.name}
-                  className="w-24 lg:w-36 -mt-12 lg:-mt-20"
+                  className="-mt-12 w-24 lg:-mt-20 lg:w-36"
                 />
-                <p className=" text-sm md:text-base lg:text-lg font-bold md:font-semibold text-textColor mt-2">
+                <p className=" mt-2 text-sm font-bold text-textColor md:text-base md:font-semibold lg:text-lg">
                   {n.name}
                 </p>
-                <p className="text-xs lg:text-sm font-semibold text-lightTextGray my-1 lg:my-2">
+                <p className="my-1 text-xs font-semibold text-lightTextGray lg:my-2 lg:text-sm">
                   {n.desc}
                 </p>
                 <p className="text-sm font-semibold text-headingColor">

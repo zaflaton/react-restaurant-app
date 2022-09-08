@@ -56,12 +56,12 @@ const Header = () => {
   }
 
   return (
-    <header className="fixed z-50 w-screen p-4 md:py-2 md:px-16 bg-primary drop-shadow-md">
+    <header className="fixed z-50 w-screen bg-primary p-4 drop-shadow-md md:py-2 md:px-16">
       {/* desktop & tablet */}
-      <div className="hidden md:flex w-full h-full items-center justify-between">
+      <div className="hidden h-full w-full items-center justify-between md:flex">
         <Link to={'/'} className="flex items-center gap-2">
           <img src={Logo} alt="logo" className="w-8 object-cover" />
-          <p className="text-headingColor text-xl font-bold"> City Market</p>
+          <p className="text-xl font-bold text-headingColor"> City Market</p>
         </Link>
         <div className="flex items-center gap-8">
           <motion.ul
@@ -69,26 +69,26 @@ const Header = () => {
             animate={{ opacity: 1, x: 0 }}
             exit={{ opacity: 0, x: 200 }}
             className="flex items-center gap-8">
-            <li className="text-base text-textColor hover:text-headingColor transition-all ease-in-out duration-100 cursor-pointer">
+            <li className="cursor-pointer text-base text-textColor transition-all duration-100 ease-in-out hover:text-headingColor">
               Home
             </li>
-            <li className="text-base text-textColor hover:text-headingColor transition-all ease-in-out duration-100 cursor-pointer">
+            <li className="cursor-pointer text-base text-textColor transition-all duration-100 ease-in-out hover:text-headingColor">
               Menu
             </li>
-            <li className="text-base text-textColor hover:text-headingColor transition-all ease-in-out duration-100 cursor-pointer">
+            <li className="cursor-pointer text-base text-textColor transition-all duration-100 ease-in-out hover:text-headingColor">
               About Us
             </li>
-            <li className="text-base text-textColor hover:text-headingColor transition-all ease-in-out duration-100 cursor-pointer">
+            <li className="cursor-pointer text-base text-textColor transition-all duration-100 ease-in-out hover:text-headingColor">
               Service
             </li>
           </motion.ul>
           <div
             className="relative flex items-center justify-center"
             onClick={showCart}>
-            <MdOutlineShoppingCart className="text-textColor  hover:text-headingColor transition-all ease-in-out duration-100 cursor-pointer text-2xl " />
+            <MdOutlineShoppingCart className="cursor-pointer  text-2xl text-textColor transition-all duration-100 ease-in-out hover:text-headingColor " />
             {cartItems && cartItems.length > 0 && (
-              <div className="absolute -top-2 -right-2 w-4 h-4 rounded-full bg-cartNumBg flex items-center justify-center">
-                <p className="text-xs text-white font-semibold">
+              <div className="absolute -top-2 -right-2 flex h-4 w-4 items-center justify-center rounded-full bg-cartNumBg">
+                <p className="text-xs font-semibold text-white">
                   {cartItems.length}
                 </p>
               </div>
@@ -99,7 +99,7 @@ const Header = () => {
               whileTap={{ scale: 0.7 }}
               src={user ? user.photoURL : Avatar}
               alt="userProfile"
-              className="w-10 h-10 min-w-[40px] min-h-[40px] rounded-full drop-shadow-xl cursor-pointer"
+              className="h-10 min-h-[40px] w-10 min-w-[40px] cursor-pointer rounded-full drop-shadow-xl"
               onClick={login}
             />
             <p>
@@ -112,11 +112,11 @@ const Header = () => {
                 initial={{ opacity: 0, scale: 0.5 }}
                 animate={{ opacity: 1, scale: 1 }}
                 exit={{ opacity: 0, scale: 0.5 }}
-                className="w-40 absolute top-11 -right-2 flex flex-col bg-gray-50 shadow-xl rounded-lg mt-1">
+                className="absolute top-11 -right-2 mt-1 flex w-40 flex-col rounded-lg bg-gray-50 shadow-xl">
                 {user && user.email === 'zaflaton@gmail.com' && (
                   <Link to={'/createItem'}>
                     <p
-                      className="px-4 py-2 flex items-center gap-4 cursor-pointer hover:bg-slate-100 transition-all ease-in-out duration-100 text-textColor text-base"
+                      className="flex cursor-pointer items-center gap-4 px-4 py-2 text-base text-textColor transition-all duration-100 ease-in-out hover:bg-slate-100"
                       onClick={closeMenu}>
                       New Item <MdAdd />
                     </p>
@@ -124,7 +124,7 @@ const Header = () => {
                 )}
 
                 <p
-                  className="px-4 py-2 flex items-center gap-4 cursor-pointer hover:bg-slate-100 transition-all ease-in-out duration-100 text-textColor text-base"
+                  className="flex cursor-pointer items-center gap-4 px-4 py-2 text-base text-textColor transition-all duration-100 ease-in-out hover:bg-slate-100"
                   onClick={logout}>
                   Logout <MdLogout />
                 </p>
@@ -135,14 +135,14 @@ const Header = () => {
       </div>
 
       {/* {mobile} */}
-      <div className="flex items-center justify-between md:hidden w-full h-full">
+      <div className="flex h-full w-full items-center justify-between md:hidden">
         <div
           className="relative flex items-center justify-center"
           onClick={showCart}>
-          <MdOutlineShoppingCart className="text-textColor  hover:text-headingColor transition-all ease-in-out duration-100 cursor-pointer text-2xl" />
+          <MdOutlineShoppingCart className="cursor-pointer  text-2xl text-textColor transition-all duration-100 ease-in-out hover:text-headingColor" />
           {cartItems && cartItems.length > 0 && (
-            <div className="absolute -top-2 -right-2 w-4 h-4 rounded-full bg-cartNumBg flex items-center justify-center">
-              <p className="text-xs text-white font-semibold">
+            <div className="absolute -top-2 -right-2 flex h-4 w-4 items-center justify-center rounded-full bg-cartNumBg">
+              <p className="text-xs font-semibold text-white">
                 {cartItems.length}
               </p>
             </div>
@@ -150,14 +150,14 @@ const Header = () => {
         </div>
         <Link to={'/'} className="flex items-center gap-2">
           <img src={Logo} alt="logo" className="w-8  object-cover" />
-          <p className="text-headingColor text-xl font-bold"> City Market</p>
+          <p className="text-xl font-bold text-headingColor"> City Market</p>
         </Link>
         <div className="relative flex flex-col items-center justify-center gap-1">
           <motion.img
             whileTap={{ scale: 0.7 }}
             src={user ? user.photoURL : Avatar}
             alt="userProfile"
-            className="w-10 h-10 min-w-[40px] min-h-[40px] rounded-full drop-shadow-xl cursor-pointer"
+            className="h-10 min-h-[40px] w-10 min-w-[40px] cursor-pointer rounded-full drop-shadow-xl"
             onClick={login}
           />
           <p className="text-sm">
@@ -170,38 +170,38 @@ const Header = () => {
               initial={{ opacity: 0, scale: 0.5 }}
               animate={{ opacity: 1, scale: 1 }}
               exit={{ opacity: 0, scale: 0.5 }}
-              className="w-40 absolute top-11 -right-1 flex flex-col bg-gray-50 shadow-xl rounded-lg">
+              className="absolute top-11 -right-1 flex w-40 flex-col rounded-lg bg-gray-50 shadow-xl">
               {user && user.email === 'zaflaton@gmail.com' && (
                 <Link to={'/createItem'}>
-                  <p className="m-2 px-4 py-2 flex items-center justify-center gap-3 cursor-pointer bg-gray-200 hover:bg-gray-300 transition-all ease-in-out duration-100 rounded-md shadow-md text-textColor text-base">
+                  <p className="m-2 flex cursor-pointer items-center justify-center gap-3 rounded-md bg-gray-200 px-4 py-2 text-base text-textColor shadow-md transition-all duration-100 ease-in-out hover:bg-gray-300">
                     New Item <MdAdd />
                   </p>
                 </Link>
               )}
               <ul className="flex flex-col">
                 <li
-                  className="px-4 py-2 gap-4 text-base text-textColor hover:text-headingColor hover:bg-slate-100 transition-all ease-in-out duration-100 cursor-pointer"
+                  className="cursor-pointer gap-4 px-4 py-2 text-base text-textColor transition-all duration-100 ease-in-out hover:bg-slate-100 hover:text-headingColor"
                   onClick={closeMenu}>
                   Home
                 </li>
                 <li
-                  className="px-4 py-2 gap-4 text-base text-textColor hover:text-headingColor hover:bg-slate-100 transition-all ease-in-out duration-100 cursor-pointer"
+                  className="cursor-pointer gap-4 px-4 py-2 text-base text-textColor transition-all duration-100 ease-in-out hover:bg-slate-100 hover:text-headingColor"
                   onClick={closeMenu}>
                   Menu
                 </li>
                 <li
-                  className="px-4 py-2 gap-4 text-base text-textColor hover:text-headingColor hover:bg-slate-100 transition-all ease-in-out duration-100 cursor-pointer"
+                  className="cursor-pointer gap-4 px-4 py-2 text-base text-textColor transition-all duration-100 ease-in-out hover:bg-slate-100 hover:text-headingColor"
                   onClick={closeMenu}>
                   About Us
                 </li>
                 <li
-                  className="px-4 py-2 gap-4 text-base text-textColor hover:text-headingColor hover:bg-slate-100 transition-all ease-in-out duration-100 cursor-pointer"
+                  className="cursor-pointer gap-4 px-4 py-2 text-base text-textColor transition-all duration-100 ease-in-out hover:bg-slate-100 hover:text-headingColor"
                   onClick={closeMenu}>
                   Service
                 </li>
               </ul>
               <p
-                className="m-2 px-4 py-2 flex items-center justify-center gap-3 cursor-pointer bg-gray-200 hover:bg-gray-300 transition-all duration-100 ease-in-out rounded-md shadow-md text-textColor text-base"
+                className="m-2 flex cursor-pointer items-center justify-center gap-3 rounded-md bg-gray-200 px-4 py-2 text-base text-textColor shadow-md transition-all duration-100 ease-in-out hover:bg-gray-300"
                 onClick={logout}>
                 Logout <MdLogout />
               </p>

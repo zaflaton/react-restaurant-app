@@ -42,16 +42,16 @@ const CartContainer = () => {
       initial={{ opacity: 0, x: 200 }}
       animate={{ opacity: 1, x: 0 }}
       exit={{ opacity: 0, x: 200 }}
-      className="fixed top-0 right-0 w-full md:w-375 h-screen bg-white drop-shadow-md flex flex-col z-[101]">
-      <div className="w-full flex items-center justify-between p-4 cursor-pointer">
+      className="md:w-375 fixed top-0 right-0 z-[101] flex h-screen w-full flex-col bg-white drop-shadow-md">
+      <div className="flex w-full cursor-pointer items-center justify-between p-4">
         <motion.div whileTap={{ scale: 0.75 }} onClick={showCart}>
-          <MdOutlineKeyboardBackspace className="text-textColor text-3xl" />
+          <MdOutlineKeyboardBackspace className="text-3xl text-textColor" />
         </motion.div>
-        <p className="text-textColor text-lg font-semibold">Cart</p>
+        <p className="text-lg font-semibold text-textColor">Cart</p>
 
         <motion.p
           whileTap={{ scale: 0.75 }}
-          className="flex items-center gap-2 p-1 px-2 my-2 bg-gray-100 rounded-md hover:shadow-md  cursor-pointer text-textColor text-base"
+          className="my-2 flex cursor-pointer items-center gap-2 rounded-md bg-gray-100 p-1 px-2  text-base text-textColor hover:shadow-md"
           onClick={clearCart}>
           Clear <RiRefreshFill />
         </motion.p>
@@ -59,9 +59,9 @@ const CartContainer = () => {
 
       {/* bottom section */}
       {cartItems && cartItems.length > 0 ? (
-        <div className="w-full h-full bg-cartBg rounded-t-[2rem] flex flex-col">
+        <div className="flex h-full w-full flex-col rounded-t-[2rem] bg-cartBg">
           {/* cart Items section */}
-          <div className="w-full h-340 md:h-42 px-6 py-10 flex flex-col gap-3 overflow-y-scroll scrollbar-none">
+          <div className="h-340 md:h-42 scrollbar-none flex w-full flex-col gap-3 overflow-y-scroll px-6 py-10">
             {/* cart Item */}
             {cartItems &&
               cartItems.length > 0 &&
@@ -76,21 +76,21 @@ const CartContainer = () => {
           </div>
 
           {/* cart total section */}
-          <div className="w-full flex-1 bg-cartTotal rounded-t-[2rem] flex flex-col items-center justify-evenly px-8 py-2">
-            <div className="w-full flex items-center justify-between">
-              <p className="text-gray-400 text-lg">Sub Total</p>
-              <p className="text-gray-400 text-lg">$ {tot}</p>
+          <div className="flex w-full flex-1 flex-col items-center justify-evenly rounded-t-[2rem] bg-cartTotal px-8 py-2">
+            <div className="flex w-full items-center justify-between">
+              <p className="text-lg text-gray-400">Sub Total</p>
+              <p className="text-lg text-gray-400">$ {tot}</p>
             </div>
-            <div className="w-full flex items-center justify-between">
-              <p className="text-gray-400 text-lg">Delivery</p>
-              <p className="text-gray-400 text-lg">$ 2.5</p>
+            <div className="flex w-full items-center justify-between">
+              <p className="text-lg text-gray-400">Delivery</p>
+              <p className="text-lg text-gray-400">$ 2.5</p>
             </div>
 
-            <div className="w-full border-b border-gray-600 my-2"></div>
+            <div className="my-2 w-full border-b border-gray-600"></div>
 
-            <div className="w-full flex items-center justify-between">
-              <p className="text-gray-200 text-xl font-semibold">Total</p>
-              <p className="text-gray-200 text-xl font-semibold">
+            <div className="flex w-full items-center justify-between">
+              <p className="text-xl font-semibold text-gray-200">Total</p>
+              <p className="text-xl font-semibold text-gray-200">
                 ${tot + 2.5}
               </p>
             </div>
@@ -99,23 +99,23 @@ const CartContainer = () => {
               <motion.button
                 whileTap={{ scale: 0.8 }}
                 type="button"
-                className="w-full p-2 rounded-full bg-gradient-to-tr from-orange-400 to-orange-600 text-gray-50 text-lg my-2 hover:shadow-lg">
+                className="my-2 w-full rounded-full bg-gradient-to-tr from-orange-400 to-orange-600 p-2 text-lg text-gray-50 hover:shadow-lg">
                 Check Out
               </motion.button>
             ) : (
               <motion.button
                 whileTap={{ scale: 0.8 }}
                 type="button"
-                className="w-full p-2 rounded-full bg-gradient-to-tr from-orange-400 to-orange-600 text-gray-50 text-lg my-2 hover:shadow-lg">
+                className="my-2 w-full rounded-full bg-gradient-to-tr from-orange-400 to-orange-600 p-2 text-lg text-gray-50 hover:shadow-lg">
                 Login to check out
               </motion.button>
             )}
           </div>
         </div>
       ) : (
-        <div className="w-full h-full flex flex-col items-center justify-center gap-6">
+        <div className="flex h-full w-full flex-col items-center justify-center gap-6">
           <img src={EmptyCart} className="w-300" alt="" />
-          <p className="text-xl text-textColor font-semibold">
+          <p className="text-xl font-semibold text-textColor">
             Add some items to your cart
           </p>
         </div>

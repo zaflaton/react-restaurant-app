@@ -9,14 +9,14 @@ import Logo from '../assets/images/logo.png'
 
 const Footer = () => {
   return (
-    <div className="flex flex-col md:flex-row gap-6 md:gap-10 items-center md:items-start z-50 w-screen px-4 py-6 md:py-8 md:px-16 bg-orange-100">
-      <div className="flex flex-1 w-full h-full flex-col items-center md:items-start justify-between">
+    <div className="z-50 flex w-screen flex-col items-center gap-6 bg-orange-100 px-4 py-6 md:flex-row md:items-start md:gap-10 md:py-8 md:px-16">
+      <div className="flex h-full w-full flex-1 flex-col items-center justify-between md:items-start">
         <Link to={'/'} className="flex items-center gap-2">
           <img src={Logo} alt="logo" className="w-8 object-cover" />
-          <p className="text-headingColor text-xl font-bold"> City Market</p>
+          <p className="text-xl font-bold text-headingColor"> City Market</p>
         </Link>
 
-        <p className=" w-56 mt-2 text-textColor">
+        <p className="mt-2 w-56 text-textColor">
           We promise our customers to get the best quality food and products
           always.
         </p>
@@ -26,19 +26,19 @@ const Footer = () => {
           initial={{ opacity: 0, x: 200 }}
           animate={{ opacity: 1, x: 0 }}
           exit={{ opacity: 0, x: 200 }}>
-          <li className="text-base text-textColor hover:text-headingColor transition-all ease-in-out duration-100 cursor-pointer">
+          <li className="cursor-pointer text-base text-textColor transition-all duration-100 ease-in-out hover:text-headingColor">
             Home
           </li>
-          <li className="text-base text-textColor hover:text-headingColor transition-all ease-in-out duration-100 cursor-pointer">
+          <li className="cursor-pointer text-base text-textColor transition-all duration-100 ease-in-out hover:text-headingColor">
             Menu
           </li>
-          <li className="text-base text-textColor hover:text-headingColor transition-all ease-in-out duration-100 cursor-pointer">
+          <li className="cursor-pointer text-base text-textColor transition-all duration-100 ease-in-out hover:text-headingColor">
             Service
           </li>
-          <li className="text-base text-textColor hover:text-headingColor transition-all ease-in-out duration-100 cursor-pointer">
+          <li className="cursor-pointer text-base text-textColor transition-all duration-100 ease-in-out hover:text-headingColor">
             About Us
           </li>
-          <li className="text-base text-textColor hover:text-headingColor transition-all ease-in-out duration-100 cursor-pointer">
+          <li className="cursor-pointer text-base text-textColor transition-all duration-100 ease-in-out hover:text-headingColor">
             Terms & conditions
           </li>
         </motion.ul>
@@ -46,24 +46,24 @@ const Footer = () => {
       <div className="flex-1 ">
         <p className="text-textColor">Contact Us</p>
         <p className="text-textColor">contact@citymarket.com</p>
-        <div className="flex gap-9 mt-3 lg:justify-start justify-center">
+        <div className="mt-3 flex justify-center gap-9 lg:justify-start">
           <motion.img
             whileTap={{ scale: 0.75 }}
             src={twitter}
             alt="twitter"
-            className="w-10 h-10 p-[5px] bg-blue-300 rounded-xl hover:shadow-lg transition-all duration-100 ease-in-out"
+            className="h-10 w-10 rounded-xl bg-blue-300 p-[5px] transition-all duration-100 ease-in-out hover:shadow-lg"
           />
           <motion.img
             whileTap={{ scale: 0.75 }}
             src={instagram}
             alt="instagram"
-            className="w-10 h-10 p-1 bg-gradient-to-tr from-orange-400 to-red-500 rounded-xl hover:shadow-lg transition-all duration-100 ease-in-out"
+            className="h-10 w-10 rounded-xl bg-gradient-to-tr from-orange-400 to-red-500 p-1 transition-all duration-100 ease-in-out hover:shadow-lg"
           />
           <motion.img
             whileTap={{ scale: 0.75 }}
             src={facebook}
             alt="facebook"
-            className="w-10 h-10 p-1 bg-blue-400 rounded-xl hover:shadow-lg transition-all duration-100 ease-in-out"
+            className="h-10 w-10 rounded-xl bg-blue-400 p-1 transition-all duration-100 ease-in-out hover:shadow-lg"
           />
         </div>
       </div>
